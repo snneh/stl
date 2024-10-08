@@ -1,0 +1,49 @@
+#include <iostream>
+#include <vector>
+#include <bitset>
+
+using namespace std;
+
+int main() {
+    // int n;
+    // cin >> n;
+
+    // // Vector to hold binary representations
+    // vector<string> binaryArray(n + 1);
+
+    // // Convert each number to binary and store it in the array
+    // for (int i = 0; i <= n; i++) {
+    //     // Convert integer to binary string using bitset
+    //     binaryArray[i] = bitset<n>(i).to_string(); // Using 32 bits for representation
+    // }
+
+    // // Print the binary representations
+    // for (int i = 0; i <= n; i++) {
+    //     cout << "Binary representation of " << i << " is: " << binaryArray[i] << endl;
+    // }
+
+    // return 0;
+    
+    
+    int n;
+    cin >> n;
+
+    // Vector to hold binary representations
+    vector<string> binaryArray(n + 1);
+
+    // Convert each number to binary and store it in the array
+    for (int i = 0; i <= n; i++) {
+        // Convert integer to binary string using bitset
+        // We use min(n, sizeof(int) * 8) to limit the size
+        int bits = min(n, static_cast<int>(sizeof(int) * 8)); // Limit to n bits or max bits of an int
+        binaryArray[i] = bitset<32>(i).to_string().substr(32 - bits); // Get last 'bits' digits
+    }
+
+    // Print the binary representations
+    for (int i = 0; i <= n; i++) {
+        cout << "Binary representation of " << i << " is: " << binaryArray[i] << endl;
+    }
+
+    
+    
+}
