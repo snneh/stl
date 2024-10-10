@@ -68,6 +68,10 @@ str.replace(22,1,3,'!');        // (from, len, n, char c)   - fill
 // replace the first needle:
 str.replace(str.find(needle), needle.length(), "replace");
 
+//compare strings
+// int strcmp ( const char *str1, const char *str2 ); 
+if(strcmp(str1, str2)==0)
+
 /*---------------------------
     02- vector
 ---------------------------*/
